@@ -25,6 +25,8 @@ func GetBarang(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Barang tidak di temukan"})
 		return
 	}
+	c.JSON(http.StatusOK, gin.H{"data": barang})
+
 }
 func CreateBarang(c *gin.Context) {
 	var inputBarang models.MasterBarang
