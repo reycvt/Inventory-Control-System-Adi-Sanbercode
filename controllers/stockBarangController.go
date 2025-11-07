@@ -76,8 +76,8 @@ func CreateStockById(c *gin.Context) {
 func UpdateStock(c *gin.Context) {
 	id := c.Param("id")
 	var dataStock models.StockBarang
-	if err := database.DB.First(&dataStock, id).Error; err != nil {
-		c.JSON(http.StatusNotFound, gin.H{"error": "Data Stock Tidak ditemukan"})
+	if err := database.DB.Where("barang_id = ?", id).First(&dataStock).Error; err != nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": "Stok untuk barang ini tidak ditemukan"})
 		return
 	}
 	var inputStock struct {
@@ -85,7 +85,7 @@ func UpdateStock(c *gin.Context) {
 		StatusBarang bool `json:"status_barang"`
 	}
 
-	if err := c.ShouldBind(&inputStock); err != nil {
+	if err := c.ShouldBindJSON(&inputStock); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
