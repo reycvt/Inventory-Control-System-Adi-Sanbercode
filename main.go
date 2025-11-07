@@ -11,14 +11,17 @@ import (
 )
 
 func main() {
+	r := gin.Default()
+	cmd := "start"
 	if len(os.Args) < 2 {
 		fmt.Println("Gunakan perintah: go run main.go [command]")
 		fmt.Println("Command tersedia: migrate | seed | start")
 		return
-	}
-	r := gin.Default()
+	} else {
 
-	cmd := os.Args[1]
+		cmd = os.Args[1]
+	}
+
 	switch cmd {
 	case "migrate":
 		database.ConnectDB()
