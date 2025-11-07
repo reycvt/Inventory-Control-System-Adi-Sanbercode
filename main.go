@@ -16,7 +16,6 @@ func main() {
 	if len(os.Args) < 2 {
 		fmt.Println("Gunakan perintah: go run main.go [command]")
 		fmt.Println("Command tersedia: migrate | seed | start")
-		return
 	} else {
 
 		cmd = os.Args[1]
