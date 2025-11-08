@@ -6,6 +6,6 @@ type StockBarang struct {
 	gorm.Model
 	BarangID     uint
 	StatusBarang bool         `gorm:"default:false"`
-	Qty          int          `gorm:"type:int(10)"`
+	Qty          int          `gorm:"null"`
 	MasterBarang MasterBarang `gorm:"foreignKey:BarangID;references:ID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 }
