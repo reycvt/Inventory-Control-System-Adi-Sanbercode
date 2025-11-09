@@ -1,0 +1,563 @@
+{
+	"info": {
+		"_postman_id": "fd13f135-6bb5-472e-b8d5-303ca997b20a",
+		"name": "inventory-Golang-Sanbercode",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15926859"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin\",\n    \"password\": \"adikanna123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/login",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \"name\":\"adikanna2\",\n    \"username\":\"subadmin\",\n    \"password\": \"adikana111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/register",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MasterBarang",
+			"item": [
+				{
+					"name": "SemuaBarang",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{local}}/masterbarang",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"masterbarang"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BarangbyId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{local}}/masterbarang/2",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"masterbarang",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TambahBarang",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "NamaBarang",
+									"value": "Action Figure Rezero REM",
+									"type": "text"
+								},
+								{
+									"key": "Type",
+									"value": "Mainan",
+									"type": "text"
+								},
+								{
+									"key": "Keterangan",
+									"value": "Mainan Import Langka",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}:8000/masterbarang",
+							"host": [
+								"{{local}}"
+							],
+							"port": "8000",
+							"path": [
+								"masterbarang"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateBarang",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "NamaBarang",
+									"value": "Wallpaper Rezero Beaterice",
+									"type": "text"
+								},
+								{
+									"key": "Type",
+									"value": "interior",
+									"type": "text"
+								},
+								{
+									"key": "Keterangan",
+									"value": "Interior Import Premium",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/masterbarang/3",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"masterbarang",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stock Barang",
+			"item": [
+				{
+					"name": "TambahStock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "qty",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "status_barang",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}:8000/masterbarang/3/stock",
+							"host": [
+								"{{local}}"
+							],
+							"port": "8000",
+							"path": [
+								"masterbarang",
+								"3",
+								"stock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateStock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"qty\": 42,\n  \"status_barang\": true\n}\n"
+						},
+						"url": {
+							"raw": "{{local}}/masterbarang/2/stock",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"masterbarang",
+								"2",
+								"stock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TampiStock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{local}}/masterbarang/2/stock",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"masterbarang",
+								"2",
+								"stock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TampiSemuaStock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{local}}/masterbarang/3/stock",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"masterbarang",
+								"3",
+								"stock"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TransaksiBarang",
+			"item": [
+				{
+					"name": "TambahTransaksi",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"IN\",\n  \"qty\": 12,\n  \"keterangan\": \"Rak Biru\"\n}"
+						},
+						"url": {
+							"raw": "{{local}}/masterbarang/3/transaksi",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"masterbarang",
+								"3",
+								"transaksi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateTransaksi",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"OUT\",\n  \"qty\": 10,\n  \"keterangan\": \"Rak Biru\"\n}"
+						},
+						"url": {
+							"raw": "{{local}}/masterbarang/3/transaksi",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"masterbarang",
+								"3",
+								"transaksi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TampilTransaksiById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/masterbarang/3/transaksi",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"masterbarang",
+								"3",
+								"transaksi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TampilSemuaTransaksi",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/masterbarang/3/transaksi",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"masterbarang",
+								"3",
+								"transaksi"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
