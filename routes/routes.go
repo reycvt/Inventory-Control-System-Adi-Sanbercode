@@ -21,7 +21,7 @@ func SetupRoutes(r *gin.Engine) {
 		protected.PUT("/masterbarang/:id", controllers.UpdateBarang)
 		protected.DELETE("/masterbarang/:id", controllers.DeleteBarang)
 
-		protected.GET("/masterbarang/stock", controllers.GetALLTransaksi)
+		protected.GET("/masterbarang/stock", controllers.GetAllStock)
 		protected.GET("/masterbarang/:id/stock", controllers.GetStock)
 		protected.POST("/masterbarang/:id/stock", controllers.CreateStockById)
 		protected.PUT("/masterbarang/:id/stock", controllers.UpdateStock)
